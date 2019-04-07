@@ -10,15 +10,14 @@
 %% --------------------------------------------------------------------
 %% Include files
 %% --------------------------------------------------------------------
--include("../interface/if_kubelet.hrl").
--include("../interface/if_monitor.hrl").
+-include("interface/if_kubelet.hrl").
 
--include("adder/src/adder_local.hrl").
 
--include("../include/tcp.hrl").
--include("../include/dns.hrl").
--include("../include/data.hrl").
--include("../include/dns_data.hrl").
+-include("apps_kube/adder/src/adder_local.hrl").
+
+%-include("../include/tcp.hrl").
+%-include("../include/data.hrl").
+-include("include/dns_data.hrl").
 %% --------------------------------------------------------------------
 
 %% --------------------------------------------------------------------
