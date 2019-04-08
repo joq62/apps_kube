@@ -104,11 +104,11 @@ init([]) ->
 %% --------------------------------------------------------------------
 
 handle_call({add,A,B}, _From, State) ->
- %   {ok,App}=application:get_application(),
-  %  AppLogMsg={atom_to_list(App),?MODULE,?LINE,{info,7,['request add ',A,B]}},
-  %  Reply=kubelet:log(AppLogMsg),
-    Reply=rpc:call(node(),adder_lib,add,[A,B]),
-   % AppLogMsg={atom_to_list(App),?MODULE,?LINE,{info,7,['result  add ',A,B," = ", Reply]}},
+    {ok,App}=application:get_application(),
+    AppLogMsg={atom_to_list(App),?MODULE,?LINE,{info,7,['request add ',A,B]}},
+    Reply=kubelet:log(AppLogMsg),
+   % Reply=rpc:call(node(),adder_lib,add,[A,B]),
+    AppLogMsg={atom_to_list(App),?MODULE,?LINE,{info,7,['result  add ',A,B," = ", Reply]}},
     {reply, Reply, State};
 
 handle_call({crash}, _From, State) ->
